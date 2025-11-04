@@ -50,7 +50,6 @@ while (true) {
 
     let start_time = input.runningTime()
     let reaction_time = 0
-    // wait for reaction
     while (true) {
         if (input.buttonIsPressed(Button.A)) {
             reaction_time = input.runningTime() - start_time
