@@ -5,13 +5,7 @@ function go_wait () {
     return randint(2000, 3000)
 }
 function wait_for (duration: number) {
-    let wait_time = input.runningTime() + duration
-    while (wait_time > input.runningTime()) {
-        if (input.buttonIsPressed(Button.A)) {
-            return false
-        }
-        basic.pause(1)
-    }
+    basic.pause(duration)
     return true
 }
 function light_up(column: number) {
@@ -23,17 +17,14 @@ function light_up(column: number) {
 function start_sequence() {
     basic.clearScreen()
     for (let column = 0; column != 5; ++column) {
-        if (column != 0 && !wait_for(LIGHT_INTERVAL)) {
-            return false
+        if (column != 0) {
+            wait_for(LIGHT_INTERVAL)
         }
         light_up(column)
     }
 
-    if (!wait_for(go_wait())) {
-        return false
-    }
+    wait_for(go_wait())
     basic.clearScreen()
-    return true
 }
 
 while (true) {
@@ -43,25 +34,20 @@ while (true) {
         }                
     }
 
-    if (!start_sequence()) {
+    input.onButtonPressed(Button.A, function () {
         basic.showIcon(IconNames.No)
-        continue
-    }
+        control.reset()
+    })
+    start_sequence()
 
     let start_time = input.runningTime()
-    let reaction_time = 0
-    while (true) {
-        if (input.buttonIsPressed(Button.A)) {
-            reaction_time = input.runningTime() - start_time
-            break
-        }
-        basic.pause(1)
-    }
+    input.onButtonPressed(Button.A, function () {
+        let reaction_time = input.runningTime() - start_time
+        basic.showNumber(reaction_time / 1000.0)
+        control.reset()
+    })
 
-    basic.showNumber(reaction_time / 1000.0)
+    while (true) {
+        basic.pause(1000)
+    }
 }
-/*
-input.onButtonPressed(Button.A, function () {
-    reaction_time = input.runningTime() - start_time
-})
-*/
