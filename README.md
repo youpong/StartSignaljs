@@ -1,24 +1,23 @@
+Open this page [https://youpong.github.io/startsignaljs/](https://youpong.github.io/startsignaljs/)
 
-> このページを開く [https://youpong.github.io/startsignaljs/](https://youpong.github.io/startsignaljs/)
+## Use as an Extension
 
-## 拡張機能として使用
+This repository can be added as an **extension** in MakeCode.
 
-このリポジトリは、MakeCode で **拡張機能** として追加できます。
+* Open [https://makecode.microbit.org/](https://makecode.microbit.org/)
+* Click **New Project**
+* Click **Extensions** in the gear button menu
+* Search for and import **https://github.com/youpong/startsignaljs**.
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **新しいプロジェクト** をクリックしてください
-* ギアボタンメニューの中にある **拡張機能** をクリックしてください
-* **https://github.com/youpong/startsignaljs** を検索してインポートします。
+## Edit this project
 
-## このプロジェクトを編集します
+Edit this repository in MakeCode.
 
-MakeCode でこのリポジトリを編集します。
+* Open [https://makecode.microbit.org/](https://makecode.microbit.org/)
+* Click **Load**, then click **Load from URL...**
+* Paste **https://github.com/youpong/startsignaljs** and click Import
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **読み込む** をクリックし、 **URLから読み込む...** をクリックしてください
-* **https://github.com/youpong/startsignaljs** を貼り付けてインポートをクリックしてください
-
-#### メタデータ (検索、レンダリングに使用)
+#### Metadata (used for search and rendering)
 
 * for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender(“{{ site.makecode.home_url }}”, “{{ site.github.owner_name }}/{{ site.github.repository_name }}”);</script>
