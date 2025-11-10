@@ -63,13 +63,11 @@ while (true) {
     }
 
     let start_time = input.runningTime();
-    input.onButtonPressed(Button.A, function () {
-        let reaction_time = input.runningTime() - start_time;
-        basic.showNumber(reaction_time / 1000.0);
-        control.reset();
-    });
-
     while (true) {
-        basic.pause(1000);
+        if (input.buttonIsPressed(Button.A)) {
+            let reaction_time = input.runningTime() - start_time;
+            basic.showNumber(reaction_time / 1000.0);
+        }
+        basic.pause(1);
     }
 }
