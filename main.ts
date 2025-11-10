@@ -1,6 +1,19 @@
 const LED_BRIGHTNESS = 5;
 const LIGHT_INTERVAL = 1000;
 
+function toFixed3(num: number): string {
+    let parts = num.toString().split(".");
+    if (parts.length == 1) {
+        parts.push("000");
+    } else {
+        while (parts[1].length < 3) {
+            parts[1] += "0";
+        }
+    }
+
+    return parts.join(".");
+}
+
 function go_wait(): number {
     return randint(2000, 3000);
 }
@@ -57,7 +70,7 @@ function main_routine() {
             let reaction_time = input.runningTime() - start_time;
             // Since showNumber() can only display up to the
             // second decimal place, use showString() instead.
-            basic.showString(`${reaction_time / 1000.0}`);
+            basic.showString(toFixed3(reaction_time / 1000.0));
             return;
         }
         basic.pause(1);
