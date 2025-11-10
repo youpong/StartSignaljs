@@ -1,5 +1,5 @@
-let LED_BRIGHTNESS = 5;
-let LIGHT_INTERVAL = 1000;
+const LED_BRIGHTNESS = 5;
+const LIGHT_INTERVAL = 1000;
 
 let jump_start = false;
 
