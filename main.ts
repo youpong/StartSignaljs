@@ -65,16 +65,13 @@ function main_routine() {
     }
 
     let start_time = input.runningTime();
-    while (true) {
-        if (input.buttonIsPressed(Button.A)) {
-            let reaction_time = input.runningTime() - start_time;
-            // Since showNumber() can only display up to the
-            // second decimal place, use showString() instead.
-            basic.showString(toFixed3(reaction_time / 1000.0));
-            return;
-        }
+    while (!input.buttonIsPressed(Button.A)) {
         basic.pause(1);
     }
+    let reaction_time = input.runningTime() - start_time;
+    // Since showNumber() can only display up to the
+    // second decimal place, use showString() instead.
+    basic.showString(toFixed3(reaction_time / 1000.0));
 }
 
 while (true) {
