@@ -3,11 +3,11 @@ let LIGHT_INTERVAL = 1000;
 
 let jump_start = false;
 
-function go_wait() {
+function go_wait(): number {
     return randint(2000, 3000);
 }
 
-function wait_for(duration: number) {
+function wait_for(duration: number): boolean {
     let wait_time = input.runningTime() + duration;
     while (wait_time > input.runningTime()) {
         if (jump_start) {
@@ -26,7 +26,7 @@ function light_up(column: number) {
         music.PlaybackMode.InBackground);
 }
 
-function start_sequence() {
+function start_sequence(): boolean {
     basic.clearScreen();
     for (let column = 0; column != 5; ++column) {
         if (column != 0 && !wait_for(LIGHT_INTERVAL)) {
