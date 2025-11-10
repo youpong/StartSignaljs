@@ -1,8 +1,6 @@
 const LED_BRIGHTNESS = 5;
 const LIGHT_INTERVAL = 1000;
 
-let jump_start = false;
-
 function go_wait(): number {
     return randint(2000, 3000);
 }
@@ -10,7 +8,7 @@ function go_wait(): number {
 function wait_for(duration: number): boolean {
     let wait_time = input.runningTime() + duration;
     while (wait_time > input.runningTime()) {
-        if (jump_start) {
+        if (input.buttonIsPressed(Button.A)) {
             return false;
         }
         basic.pause(1);
@@ -43,23 +41,14 @@ function start_sequence(): boolean {
     return true;
 }
 
-while (true) {
-    jump_start = false;
-
-    while (true) {
-        if (input.logoIsPressed()) {
-            break;
-        }
+function main_routine() {
+    while (!input.logoIsPressed()) {
+        basic.pause(1);
     }
 
-    input.onButtonPressed(Button.A, function () {
-        jump_start = true;
-    });
-
-    start_sequence();
-    if (jump_start) {
+    if (!start_sequence()) {
         basic.showIcon(IconNames.No);
-        continue;
+        return;
     }
 
     let start_time = input.runningTime();
@@ -69,7 +58,12 @@ while (true) {
             // Since showNumber() can only display up to the
             // second decimal place, use showString() instead.
             basic.showString(`${reaction_time / 1000.0}`);
+            return;
         }
         basic.pause(1);
     }
+}
+
+while (true) {
+    main_routine();
 }
