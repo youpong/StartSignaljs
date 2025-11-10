@@ -68,7 +68,7 @@ while (true) {
             let reaction_time = input.runningTime() - start_time;
             // Since showNumber() can only display up to the
             // second decimal place, use showString() instead.
-            basic.showString((reaction_time / 1000.0).toString());
+            basic.showString(`${reaction_time / 1000.0}`);
         }
         basic.pause(1);
     }
