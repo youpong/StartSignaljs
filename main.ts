@@ -66,7 +66,9 @@ while (true) {
     while (true) {
         if (input.buttonIsPressed(Button.A)) {
             let reaction_time = input.runningTime() - start_time;
-            basic.showNumber(reaction_time / 1000.0);
+            // Since showNumber() can only display up to the
+            // second decimal place, use showString() instead.
+            basic.showString((reaction_time / 1000.0).toString());
         }
         basic.pause(1);
     }
