@@ -1,4 +1,10 @@
-Open this page [https://youpong.github.io/startsignaljs/](https://youpong.github.io/startsignaljs/)
+# StartSignaljs
+A BBC micro:bit project — a reaction time measurement app inspired by the F1
+start signal, five lights illuminate in sequence; when the lights out, it's 
+the start signal.
+
+Open this page 
+[https://youpong.github.io/startsignaljs/](https://youpong.github.io/startsignaljs/)
 
 ## Use as an Extension
 
