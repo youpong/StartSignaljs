@@ -23,6 +23,10 @@ Edit this repository in MakeCode.
 * Click **Load**, then click **Load from URL...**
 * Paste **https://github.com/youpong/startsignaljs** and click Import
 
+## License
+
+MIT
+
 #### Metadata (used for search and rendering)
 
 * for PXT/microbit
