@@ -2,9 +2,32 @@
 A BBC micro:bit project — a reaction time measurement app inspired by the F1
 start signal, five lights illuminate in sequence; when the lights out, it's 
 the start signal.
+This project uses the [MakeCode editor](https://makecode.microbit.org/#editor).
 
-Open this page 
+> Open this page 
 [https://youpong.github.io/startsignaljs/](https://youpong.github.io/startsignaljs/)
+
+## Setup
+
+### Import the project
+
+Access the MakeCode website.
+![MakeCode](./images/myprj.png)
+
+Click *Import*.
+
+![Import](./images/impt.png)
+
+Select *Import URL...*
+
+![URL](./images/url.png)
+
+Enter the URL and click *Go ahead!*
+https://github.com/youpong/StartSignaljs
+
+### Download the program
+
+Connect the micro:bit to your PC and download the program.
 
 ## Use as an Extension
 
@@ -26,6 +49,11 @@ Edit this repository in MakeCode.
 ## License
 
 MIT
+
+## References
+
+* https://github.com/youpong/StartSignal original written in MicroPython.
+* https://github.com/youpong/StartSignal-Duel for two players.
 
 #### Metadata (used for search and rendering)
 
